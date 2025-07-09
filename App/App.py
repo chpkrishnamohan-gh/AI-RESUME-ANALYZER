@@ -21,6 +21,16 @@ from phonenumbers import COUNTRY_CODE_TO_REGION_CODE
 import pycountry
 import pickle
 
+#DATA NEEDED TO RUN THE APP FROM HOSTING SIDE 
+api_keyy = ""
+
+DB_HOST = '127.0.0.1'
+DB_PORT = 3306
+DB_USER = 'root'
+DB_PASSWORD = ''
+DB_NAME = 'resume_data'
+
+
 #credentials checking
 
 def country_codes() :
@@ -49,13 +59,6 @@ def is_valid_gmail(email):
 #database section
 
 # Database configuration
-DB_HOST = '127.0.0.1'
-DB_PORT = 3306
-DB_USER = 'root'
-DB_PASSWORD = '123098'
-DB_NAME = 'resume_data'
-
-
 
 def connect_to_mysql():
     return pymysql.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD)
@@ -269,7 +272,7 @@ def header_visibility(visible = True) :
 
 class LLM_model :
     def __init__(self):
-        genai.configure(api_key="AIzaSyBDkF9Myht27vbN-6M2Uo1zCD2xskckaVs")
+        genai.configure(api_key=api_keyy)
 
         self.model_version = genai.GenerativeModel("models/gemini-2.0-flash")
 
