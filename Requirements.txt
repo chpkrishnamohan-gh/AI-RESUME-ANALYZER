@@ -1,0 +1,10 @@
+pandas
+streamlit
+PyMuPDF
+pillow
+pymysql
+geocoder
+geopy
+google-generativeai
+phonenumbers
+pycountry
