@@ -381,10 +381,10 @@ def recommend_courses(skills) :
 
 def display_analysis(resume_data) :
     st.markdown("<h2 style='color:#4CAF50;'>📄 Resume Analysis</h2>", unsafe_allow_html=True)
-    st.success(f"Hello, {resume_data['name']} 👋")
+    st.success(f"Hello, {resume_data['name']} ")
 
 
-    st.markdown("<h3 style='margin-top:30px;'>👤 Basic Information</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='margin-top:30px;'> Basic Information</h3>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     with col1:
         st.markdown(f"**Name:** {resume_data['name']}")
@@ -394,7 +394,7 @@ def display_analysis(resume_data) :
         st.markdown(f"**Degree:** {resume_data['education'][0]['degree']}")
         st.markdown(f"**Resume Pages:** {resume_data.get('total_pages', 'N/A')}")
         st.markdown(
-            f"<h5 style='color:#fba171;'>📌 Candidate Level: {resume_data['cand_level']}</h5>",
+            f"<h5 style='color:#fba171;'> Candidate Level: {resume_data['cand_level']}</h5>",
             unsafe_allow_html=True
         )
 
@@ -403,20 +403,20 @@ def display_analysis(resume_data) :
     st.success(f"✅ Based on our analysis, you're best suited for **{resume_data['field']}** roles.")
 
 
-    st.markdown("<h4>🌟 Highlighted Skills That Point to This Field:</h4>", unsafe_allow_html=True)
+    st.markdown("<h4> Highlighted Skills That Point to This Field:</h4>", unsafe_allow_html=True)
     st.markdown(
         "<ul style='list-style-type:circle; padding-left:20px; color:#444;'>"
         + "".join([f"<li>{skill}</li>" for skill in resume_data.get("highlighted-skills", [])])
         + "</ul>", unsafe_allow_html=True)
 
-    st.markdown("<h4 style='color:#1ed760;'>🚀 Skills You Should Consider Adding or Improving:</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='color:#1ed760;'> Skills You Should Consider Adding or Improving:</h4>", unsafe_allow_html=True)
     st.markdown(
         "<ul style='list-style-type:circle; padding-left:20px; color:#444;'>"
         + "".join([f"<li>{skill}</li>" for skill in resume_data.get("recommended_skills", [])])
         + "</ul>", unsafe_allow_html=True)
     
 def display_courses(recommended_courses):
-    st.markdown("<h3 style='margin-top:30px; color:#4CAF50;'>📚 Recommended Courses(for recommended skills)</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='margin-top:30px; color:#4CAF50;'> Recommended Courses(for recommended skills)</h3>", unsafe_allow_html=True)
 
     for skill, courses in recommended_courses.items():
         st.markdown(f"<h4 style='margin-top:20px; color:#2c3e50;'>🔧 Skill: {skill}</h4>", unsafe_allow_html=True)
@@ -640,7 +640,7 @@ def run() :
                     st.markdown("---")
 
             # Search resume profiles by skills
-            st.markdown("### 🧠 Search Resume Profiles by Skills")
+            st.markdown("###  Search Resume Profiles by Skills")
 
             skill_input = st.text_input("Enter skill(s) to search for resume matches (comma-separated) and press enter", placeholder="e.g., Python, SQL, React")
 
